@@ -1,0 +1,28 @@
+body{
+    background-color: #a9e1b9; 
+  }
+
+  .headerrow, #messagePane {
+    background-color: #e5f5e5; 
+  }
+
+  .join_room_response, .left_room_response {
+    background-color: #e8e8e8; 
+  }
+  .chat_message {
+    font-size:125%;
+    color: #000000;
+    margin: 1px 1px 1px 1px;
+  }
+
+  table#game_board {
+    border: 4px solid black;
+    margin:0px;
+    padding:0px;
+  }
+
+  table#game_board td {
+    border: 1px solid black;
+    margin:0px;
+    padding:0px;
+  }
