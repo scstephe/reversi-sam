@@ -480,6 +480,8 @@ function create_new_game() {
 
     new_game.whose_turn = 'white';
 
+    console.log("This went through the send create new game function");
+
     new_game.board = [
         [' ',' ',' ',' ',' ',' ',' ',' '],
         [' ',' ',' ',' ',' ',' ',' ',' '],
@@ -509,6 +511,7 @@ function send_game_update(socket, game_id, message) {
         games[game_id] = create_new_game();
     }
 
+    console.log("This went through the send game update function");
 
     /*Send game update*/
     let payload = {
