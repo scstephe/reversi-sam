@@ -447,6 +447,15 @@ io.on('connection', (socket) => {
                 serverLog('send_chat_message command failed', JSON.stringify(response));
                 return;
             }
+            /*Handle the command*/
+            let response = {};
+            response.result = 'success';
+            response.username = username;
+            response.room = room;
+            response.message = message;
+            /*Tell everyone in the room what the message is*/
+            io.of('/').to(room).emit('send_chat_message_response',response);
+            serverLog('send_chat_message command succedded', JSON.stringify(response));
         });
 
         socket.on('play_token', (payload) => {
@@ -545,7 +554,9 @@ io.on('connection', (socket) => {
             }
 
             send_game_update(socket, game_id, 'played a token');
+         
         }); 
+    
     });
 
 
@@ -657,7 +668,33 @@ function send_game_update(socket, game_id, message) {
     })   
 
      /*Check if the game is over*/
+     let count = 0;
+     for (let row = 0; row < 8; row++) {
+        for(let column = 0; column < 8; column++ ) {
+            if(games[game_id].board[row][column] != ' ') {
+                count++;
+            }
+        } 
+     }
+     if (count === 64) {
+        let payload = {
+           result: 'success',
+           game_id: game_id,
+           game: games[game_id],
+           who_won: 'everyone' 
+        }
+        io.in(game_id).emit('game_over', payload);
 
+     /*Delete old games after 1 hour OPTIONAL */ 
+     setTimeout(
+        ((id) => {
+            return (() => {
+                delete games[id];
+            });
+        })(game_id), 60 * 60 * 1000
+     );
+
+    }
 
 }
 
