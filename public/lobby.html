@@ -5,30 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reversi: Lobby</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <style>
+      
+      body {
+        background-color: #232323; 
+      }
       .headerrow {
-        background-color: #8cd7c1; 
+        background-color: #dbdbdb; 
+        border-radius: 15px;
       }
 
       #messagePane {
-        background-color: #97eed4; 
+        background-color: #dbdbdb;
+        border-radius: 15px; 
       }
 
       .join_room_response, .left_room_response {
-        background-color: #e8e8e8; 
+        background-color: #dbdbdb; 
+        font-style: italic;
       }
       .chat_message {
         font-size:125%;
         color: #000000;
         margin: 1px 1px 1px 1px;
       }
+
+      #playerscolor {
+        color: #dbdbdb;
+      }
+
+      #players {
+        color: #dbdbdb;
+      }
+
+      .patua-one-regular {
+        font-family: "Patua One", serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
     </style>
   </head>
   <body>
     <div class="container-fluid"> 
       <div class = "row m-3 headerrow">
         <div class = "col text-center">
-          <h1 id="lobbyTitle">Lobby</h1>
+          <h1 id="lobbyTitle" class="patua-one-regular">Lobby</h1>
         </div>
       </div>
 
@@ -36,7 +61,7 @@
         <div class = "col">
           <div class = "row align-items-start justify-content-center">
             <div class="col-md-4">
-              <h4>Players</h4>
+              <h4 id="playerscolor">Players</h4>
               <div id="players" class="align-items-end text-right m-3">
               </div>
             </div>
@@ -46,7 +71,7 @@
               </div>
               <div class="input-group">
                 <input type="text" class="form-control text-nowrap" id="chatMessage" placeholder="Enter your message here" aria-label="Enter your message to send to the chat room"/>
-                <button type="submit" class="btn btn-primary text-nowrap" id="chatButton" onclick="sendChatMessage()"> Send</button>
+                <button type="submit" class="btn btn-dark text-nowrap" id="chatButton" onclick="sendChatMessage()"> Send</button>
               </div>
               <div id="messages">
               </div>
@@ -55,11 +80,6 @@
         </div>
       </div>
 
-      <div class = "row m-3">
-        <div class="col text-center 1">
-          <p> This is a virtual simulation of the game Reversi with the intention of showcasing online coding skills.</p>
-        </div>
-      </div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

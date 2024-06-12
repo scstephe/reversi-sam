@@ -1,33 +1,48 @@
 body{
-    background-color: #a9e1b9; 
+    background-color: #232323; 
   }
 
   .headerrow, #messagePane {
-    background-color: #e5f5e5; 
+    background-color: #dbdbdb; 
+    border-radius: 15px;
+  }
+
+ #whitesum, #vs, #blacksum, #game_over, #my_color {
+    color: #ffffff;
   }
 
   .join_room_response, .left_room_response {
-    background-color: #e8e8e8; 
+    background-color: #dbdbdb; 
+    font-style: italic;
   }
   .chat_message {
     font-size:125%;
     color: #000000;
     margin: 1px 1px 1px 1px;
+    border-radius: 15px;
   }
 
   table#game_board {
-    border: 4px solid black;
+    border: 4px solid #000000;
     margin:0px;
     padding:0px;
+    border-radius: 10px;
   }
 
   table#game_board td {
-    background-color: #253e2c;
-    border: 1px solid black;
+    background-color: #8e8e8e;
+    border: 1px solid #232323;
     margin:0px;
     padding:0px;
+    border-radius: 10px;
   }
 
 td.hovered_over:hover {
   background-image: url('/assets/images/Hover.gif');
+}
+
+.patua-one-regular {
+  font-family: "Patua One", serif;
+  font-weight: 400;
+  font-style: normal;
 }

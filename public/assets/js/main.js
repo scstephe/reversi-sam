@@ -453,7 +453,7 @@ socket.on('game_over', (payload) => {
     let nodeA = $("<div id='game_over'></div>");
     let nodeB = $("<h1>Game Over</h1>");
     let nodeC = $("<h2>" + payload.who_won + " won!</h2>");
-    let nodeD = $("<a href='lobby.html?username="+username+"'class='btn btn-lg btn-success' role='button'>Return to lobby</a>");
+    let nodeD = $("<a href='lobby.html?username="+username+"'class='btn btn-lg btn-outline-light' role='button'>Return to lobby</a>");
     nodeA.append(nodeB);
     nodeA.append(nodeC);
     nodeA.append(nodeD);
@@ -473,7 +473,7 @@ $( () => {
     socket.emit('join_room',request);
 
     $("#lobbyTitle").html(username + "'s Lobby");
-    $("#quit").html("<a href='lobby.html?username="+username+"'class='btn btn-danger' role='button'>Quit</a>");
+    $("#quit").html("<a href='lobby.html?username="+username+"'class='btn btn-outline-light' role='button'>Quit</a>");
 
     $('#chatMessage').keypress(function (e) {
         let key = e.which;
